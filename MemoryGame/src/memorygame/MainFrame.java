@@ -30,7 +30,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         for(int i = 0; i < tiles.length; i ++){
             tiles[i] = new UITile();
-            tiles[i].GameLogic.setCount(i); //used to be Number instead of Count, but I need to use variables from Gamelogic to
+            tiles[i].setNumber(i); //used to be Number instead of Count, but I need to use variables from Gamelogic to
+            tiles[i+1].setNumber(i);
+            i += 2;
             //System.out.println(getClass().getClassLoader().getResource("img.png")); Checking if images exist
             ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("img.png")); //grabs images from directory //Have to find why the directory isn't being found, if I can't find this tomorrow I am f**ked
             Image img = icon.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT); //resizes
